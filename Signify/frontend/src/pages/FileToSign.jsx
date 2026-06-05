@@ -262,12 +262,12 @@ export default function FileToSign() {
         <div className="viewer">
           {currentVariant ? (
             currentVariant.sign_type === "image" ? (
-              <img className="media" src={currentVariant.file_path} alt="sign" />
+              <img className="media" src={(import.meta.env.VITE_DATASET_URL || "") + currentVariant.file_path} alt="sign" />
             ) : (
               <video
                 ref={signVideoRef}
                 className="media"
-                src={currentVariant.file_path}
+                src={(import.meta.env.VITE_DATASET_URL || "") + currentVariant.file_path}
                 autoPlay
                 controls
                 playsInline
